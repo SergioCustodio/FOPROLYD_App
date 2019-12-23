@@ -46,6 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="dsFOPROLYD.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsFOPROLYD.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FOPROLYD_recepDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -71,6 +76,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="dsFOPROLYD.xsc">
+      <DependentUpon>dsFOPROLYD.xsd</DependentUpon>
+    </None>
+    <None Include="dsFOPROLYD.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsFOPROLYD.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dsFOPROLYD.xss">
+      <DependentUpon>dsFOPROLYD.xsd</DependentUpon>
+    </None>
     <None Include="FOPROLYD_recepDataSet.xsc">
       <DependentUpon>FOPROLYD_recepDataSet.xsd</DependentUpon>
     </None>

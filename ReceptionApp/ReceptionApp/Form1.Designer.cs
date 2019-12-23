@@ -31,36 +31,30 @@
             this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.llamadas_tab = new System.Windows.Forms.TabPage();
+            this.datetime = new System.Windows.Forms.Button();
+            this.guardarllamada_btn = new System.Windows.Forms.Button();
+            this.notas_txtbox = new System.Windows.Forms.TextBox();
+            this.date_picker = new System.Windows.Forms.DateTimePicker();
+            this.categoria_combo = new System.Windows.Forms.ComboBox();
+            this.combo_rubro = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.llamadas_datagrid = new System.Windows.Forms.DataGridView();
+            this.llamadasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fOPROLYD_recepDataSet = new ReceptionApp.FOPROLYD_recepDataSet();
             this.correspondencia_tab = new System.Windows.Forms.TabPage();
             this.audiencias_tab = new System.Windows.Forms.TabPage();
             this.atencion_tab = new System.Windows.Forms.TabPage();
             this.report_btn = new System.Windows.Forms.Button();
             this.salir_btn = new System.Windows.Forms.Button();
-            this.llamadas_datagrid = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.combo_rubro = new System.Windows.Forms.ComboBox();
-            this.categoria_combo = new System.Windows.Forms.ComboBox();
-            this.date_picker = new System.Windows.Forms.DateTimePicker();
-            this.notas_txtbox = new System.Windows.Forms.TextBox();
-            this.notas_check = new System.Windows.Forms.CheckBox();
-            this.guardarllamada_btn = new System.Windows.Forms.Button();
             this.refrescar_btn = new System.Windows.Forms.Button();
-            this.fOPROLYD_recepDataSet = new ReceptionApp.FOPROLYD_recepDataSet();
-            this.llamadasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.llamadasTableAdapter = new ReceptionApp.FOPROLYD_recepDataSetTableAdapters.llamadasTableAdapter();
-            this.iDllamaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rubrollamadaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechallamadaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.identificadorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.categoriaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.notasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.llamadas_tab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.llamadas_datagrid)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fOPROLYD_recepDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.llamadasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fOPROLYD_recepDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -78,9 +72,9 @@
             // 
             // llamadas_tab
             // 
+            this.llamadas_tab.Controls.Add(this.datetime);
             this.llamadas_tab.Controls.Add(this.guardarllamada_btn);
             this.llamadas_tab.Controls.Add(this.notas_txtbox);
-            this.llamadas_tab.Controls.Add(this.notas_check);
             this.llamadas_tab.Controls.Add(this.date_picker);
             this.llamadas_tab.Controls.Add(this.categoria_combo);
             this.llamadas_tab.Controls.Add(this.combo_rubro);
@@ -95,6 +89,143 @@
             this.llamadas_tab.TabIndex = 0;
             this.llamadas_tab.Text = "Llamadas";
             this.llamadas_tab.UseVisualStyleBackColor = true;
+            // 
+            // datetime
+            // 
+            this.datetime.Location = new System.Drawing.Point(683, 53);
+            this.datetime.Name = "datetime";
+            this.datetime.Size = new System.Drawing.Size(100, 20);
+            this.datetime.TabIndex = 13;
+            this.datetime.Text = "getdateTime";
+            this.datetime.UseVisualStyleBackColor = true;
+            this.datetime.Click += new System.EventHandler(this.datetime_Click);
+            // 
+            // guardarllamada_btn
+            // 
+            this.guardarllamada_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guardarllamada_btn.Location = new System.Drawing.Point(671, 129);
+            this.guardarllamada_btn.Name = "guardarllamada_btn";
+            this.guardarllamada_btn.Size = new System.Drawing.Size(112, 44);
+            this.guardarllamada_btn.TabIndex = 12;
+            this.guardarllamada_btn.Text = "Guardar";
+            this.guardarllamada_btn.UseVisualStyleBackColor = true;
+            this.guardarllamada_btn.Click += new System.EventHandler(this.guardarllamada_btn_Click);
+            // 
+            // notas_txtbox
+            // 
+            this.notas_txtbox.Location = new System.Drawing.Point(24, 112);
+            this.notas_txtbox.Multiline = true;
+            this.notas_txtbox.Name = "notas_txtbox";
+            this.notas_txtbox.Size = new System.Drawing.Size(641, 80);
+            this.notas_txtbox.TabIndex = 9;
+            // 
+            // date_picker
+            // 
+            this.date_picker.Location = new System.Drawing.Point(465, 53);
+            this.date_picker.Name = "date_picker";
+            this.date_picker.Size = new System.Drawing.Size(200, 20);
+            this.date_picker.TabIndex = 8;
+            // 
+            // categoria_combo
+            // 
+            this.categoria_combo.FormattingEnabled = true;
+            this.categoria_combo.Items.AddRange(new object[] {
+            "Beneficiarios",
+            "Proveedores",
+            "Agencias",
+            "Insultos",
+            "Personales",
+            "I.Publicas"});
+            this.categoria_combo.Location = new System.Drawing.Point(225, 52);
+            this.categoria_combo.Name = "categoria_combo";
+            this.categoria_combo.Size = new System.Drawing.Size(169, 21);
+            this.categoria_combo.TabIndex = 7;
+            // 
+            // combo_rubro
+            // 
+            this.combo_rubro.FormattingEnabled = true;
+            this.combo_rubro.Items.AddRange(new object[] {
+            "PRES",
+            "CTE",
+            "DATH",
+            "DAYOR",
+            "DCONTA",
+            "DCR",
+            "DPYBE",
+            "DPRES",
+            "DSYCS",
+            "DSG",
+            "DTES",
+            "GG",
+            "LABPRO",
+            "ORCHAL",
+            "ORSAM",
+            "UADI",
+            "UAIP",
+            "UACI",
+            "UAI",
+            "UG",
+            "UGDAI",
+            "UI",
+            "UPYR",
+            "URSYP",
+            "UFI",
+            "UJ"});
+            this.combo_rubro.Location = new System.Drawing.Point(24, 52);
+            this.combo_rubro.Name = "combo_rubro";
+            this.combo_rubro.Size = new System.Drawing.Size(139, 21);
+            this.combo_rubro.TabIndex = 6;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(532, 26);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(47, 17);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Fecha";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(276, 26);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(61, 17);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Categria";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(21, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(47, 17);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Rubro";
+            // 
+            // llamadas_datagrid
+            // 
+            this.llamadas_datagrid.AllowUserToAddRows = false;
+            this.llamadas_datagrid.AllowUserToDeleteRows = false;
+            this.llamadas_datagrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.llamadas_datagrid.Location = new System.Drawing.Point(24, 218);
+            this.llamadas_datagrid.Name = "llamadas_datagrid";
+            this.llamadas_datagrid.ReadOnly = true;
+            this.llamadas_datagrid.Size = new System.Drawing.Size(759, 119);
+            this.llamadas_datagrid.TabIndex = 0;
+            // 
+            // llamadasBindingSource
+            // 
+            this.llamadasBindingSource.DataMember = "llamadas";
+            this.llamadasBindingSource.DataSource = this.fOPROLYD_recepDataSet;
+            // 
+            // fOPROLYD_recepDataSet
+            // 
+            this.fOPROLYD_recepDataSet.DataSetName = "FOPROLYD_recepDataSet";
+            this.fOPROLYD_recepDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // correspondencia_tab
             // 
@@ -147,141 +278,6 @@
             this.salir_btn.UseVisualStyleBackColor = true;
             this.salir_btn.Click += new System.EventHandler(this.salir_btn_Click);
             // 
-            // llamadas_datagrid
-            // 
-            this.llamadas_datagrid.AllowUserToAddRows = false;
-            this.llamadas_datagrid.AllowUserToDeleteRows = false;
-            this.llamadas_datagrid.AutoGenerateColumns = false;
-            this.llamadas_datagrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.llamadas_datagrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iDllamaDataGridViewTextBoxColumn,
-            this.rubrollamadaDataGridViewTextBoxColumn,
-            this.fechallamadaDataGridViewTextBoxColumn,
-            this.identificadorDataGridViewTextBoxColumn,
-            this.categoriaDataGridViewTextBoxColumn,
-            this.notasDataGridViewTextBoxColumn});
-            this.llamadas_datagrid.DataSource = this.llamadasBindingSource;
-            this.llamadas_datagrid.Location = new System.Drawing.Point(7, 218);
-            this.llamadas_datagrid.Name = "llamadas_datagrid";
-            this.llamadas_datagrid.ReadOnly = true;
-            this.llamadas_datagrid.Size = new System.Drawing.Size(779, 119);
-            this.llamadas_datagrid.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(21, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 17);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Rubro";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(276, 26);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 17);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Categria";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(532, 26);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(47, 17);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Fecha";
-            // 
-            // combo_rubro
-            // 
-            this.combo_rubro.FormattingEnabled = true;
-            this.combo_rubro.Items.AddRange(new object[] {
-            "PRES",
-            "CTE",
-            "DATH",
-            "DAYOR",
-            "DCONTA",
-            "DCR",
-            "DPYBE",
-            "DPRES",
-            "DSYCS",
-            "DSG",
-            "DTES",
-            "GG",
-            "LABPRO",
-            "ORCHAL",
-            "ORSAM",
-            "UADI",
-            "UAIP",
-            "UACI",
-            "UAI",
-            "UG",
-            "UGDAI",
-            "UI",
-            "UPYR",
-            "URSYP",
-            "UFI",
-            "UJ"});
-            this.combo_rubro.Location = new System.Drawing.Point(24, 52);
-            this.combo_rubro.Name = "combo_rubro";
-            this.combo_rubro.Size = new System.Drawing.Size(139, 21);
-            this.combo_rubro.TabIndex = 6;
-            // 
-            // categoria_combo
-            // 
-            this.categoria_combo.FormattingEnabled = true;
-            this.categoria_combo.Items.AddRange(new object[] {
-            "Beneficiarios",
-            "Proveedores",
-            "Agencias",
-            "Insultos",
-            "Personales",
-            "I. Publicas"});
-            this.categoria_combo.Location = new System.Drawing.Point(225, 52);
-            this.categoria_combo.Name = "categoria_combo";
-            this.categoria_combo.Size = new System.Drawing.Size(169, 21);
-            this.categoria_combo.TabIndex = 7;
-            // 
-            // date_picker
-            // 
-            this.date_picker.Location = new System.Drawing.Point(465, 53);
-            this.date_picker.Name = "date_picker";
-            this.date_picker.Size = new System.Drawing.Size(200, 20);
-            this.date_picker.TabIndex = 8;
-            // 
-            // notas_txtbox
-            // 
-            this.notas_txtbox.Location = new System.Drawing.Point(24, 112);
-            this.notas_txtbox.Multiline = true;
-            this.notas_txtbox.Name = "notas_txtbox";
-            this.notas_txtbox.Size = new System.Drawing.Size(641, 80);
-            this.notas_txtbox.TabIndex = 9;
-            // 
-            // notas_check
-            // 
-            this.notas_check.AutoSize = true;
-            this.notas_check.Location = new System.Drawing.Point(24, 89);
-            this.notas_check.Name = "notas_check";
-            this.notas_check.Size = new System.Drawing.Size(88, 17);
-            this.notas_check.TabIndex = 11;
-            this.notas_check.Text = "notas_check";
-            this.notas_check.UseVisualStyleBackColor = true;
-            // 
-            // guardarllamada_btn
-            // 
-            this.guardarllamada_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guardarllamada_btn.Location = new System.Drawing.Point(674, 112);
-            this.guardarllamada_btn.Name = "guardarllamada_btn";
-            this.guardarllamada_btn.Size = new System.Drawing.Size(112, 44);
-            this.guardarllamada_btn.TabIndex = 12;
-            this.guardarllamada_btn.Text = "Guardar";
-            this.guardarllamada_btn.UseVisualStyleBackColor = true;
-            // 
             // refrescar_btn
             // 
             this.refrescar_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -293,61 +289,9 @@
             this.refrescar_btn.UseVisualStyleBackColor = true;
             this.refrescar_btn.Click += new System.EventHandler(this.refrescar_btn_Click);
             // 
-            // fOPROLYD_recepDataSet
-            // 
-            this.fOPROLYD_recepDataSet.DataSetName = "FOPROLYD_recepDataSet";
-            this.fOPROLYD_recepDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // llamadasBindingSource
-            // 
-            this.llamadasBindingSource.DataMember = "llamadas";
-            this.llamadasBindingSource.DataSource = this.fOPROLYD_recepDataSet;
-            // 
             // llamadasTableAdapter
             // 
             this.llamadasTableAdapter.ClearBeforeFill = true;
-            // 
-            // iDllamaDataGridViewTextBoxColumn
-            // 
-            this.iDllamaDataGridViewTextBoxColumn.DataPropertyName = "ID_llama";
-            this.iDllamaDataGridViewTextBoxColumn.HeaderText = "ID_llama";
-            this.iDllamaDataGridViewTextBoxColumn.Name = "iDllamaDataGridViewTextBoxColumn";
-            this.iDllamaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // rubrollamadaDataGridViewTextBoxColumn
-            // 
-            this.rubrollamadaDataGridViewTextBoxColumn.DataPropertyName = "Rubro_llamada";
-            this.rubrollamadaDataGridViewTextBoxColumn.HeaderText = "Rubro_llamada";
-            this.rubrollamadaDataGridViewTextBoxColumn.Name = "rubrollamadaDataGridViewTextBoxColumn";
-            this.rubrollamadaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // fechallamadaDataGridViewTextBoxColumn
-            // 
-            this.fechallamadaDataGridViewTextBoxColumn.DataPropertyName = "Fecha_llamada";
-            this.fechallamadaDataGridViewTextBoxColumn.HeaderText = "Fecha_llamada";
-            this.fechallamadaDataGridViewTextBoxColumn.Name = "fechallamadaDataGridViewTextBoxColumn";
-            this.fechallamadaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // identificadorDataGridViewTextBoxColumn
-            // 
-            this.identificadorDataGridViewTextBoxColumn.DataPropertyName = "Identificador";
-            this.identificadorDataGridViewTextBoxColumn.HeaderText = "Identificador";
-            this.identificadorDataGridViewTextBoxColumn.Name = "identificadorDataGridViewTextBoxColumn";
-            this.identificadorDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // categoriaDataGridViewTextBoxColumn
-            // 
-            this.categoriaDataGridViewTextBoxColumn.DataPropertyName = "Categoria";
-            this.categoriaDataGridViewTextBoxColumn.HeaderText = "Categoria";
-            this.categoriaDataGridViewTextBoxColumn.Name = "categoriaDataGridViewTextBoxColumn";
-            this.categoriaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // notasDataGridViewTextBoxColumn
-            // 
-            this.notasDataGridViewTextBoxColumn.DataPropertyName = "Notas";
-            this.notasDataGridViewTextBoxColumn.HeaderText = "Notas";
-            this.notasDataGridViewTextBoxColumn.Name = "notasDataGridViewTextBoxColumn";
-            this.notasDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // recepcion_form
             // 
@@ -365,8 +309,8 @@
             this.llamadas_tab.ResumeLayout(false);
             this.llamadas_tab.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.llamadas_datagrid)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fOPROLYD_recepDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.llamadasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fOPROLYD_recepDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -383,7 +327,6 @@
         private System.Windows.Forms.DataGridView llamadas_datagrid;
         private System.Windows.Forms.Button guardarllamada_btn;
         private System.Windows.Forms.TextBox notas_txtbox;
-        private System.Windows.Forms.CheckBox notas_check;
         private System.Windows.Forms.DateTimePicker date_picker;
         private System.Windows.Forms.ComboBox categoria_combo;
         private System.Windows.Forms.ComboBox combo_rubro;
@@ -394,12 +337,7 @@
         private FOPROLYD_recepDataSet fOPROLYD_recepDataSet;
         private System.Windows.Forms.BindingSource llamadasBindingSource;
         private FOPROLYD_recepDataSetTableAdapters.llamadasTableAdapter llamadasTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDllamaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn rubrollamadaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechallamadaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn identificadorDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn categoriaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn notasDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button datetime;
     }
 }
 

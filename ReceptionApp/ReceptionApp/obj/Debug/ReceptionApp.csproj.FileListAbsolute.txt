@@ -8,3 +8,13 @@ C:\Users\kasuya\source\repos\ReceptionApp\ReceptionApp\obj\Debug\ReceptionApp.cs
 C:\Users\kasuya\source\repos\ReceptionApp\ReceptionApp\obj\Debug\ReceptionApp.csproj.CoreCompileInputs.cache
 C:\Users\kasuya\source\repos\ReceptionApp\ReceptionApp\obj\Debug\ReceptionApp.exe
 C:\Users\kasuya\source\repos\ReceptionApp\ReceptionApp\obj\Debug\ReceptionApp.pdb
+C:\Users\kasuya\Documents\GitHub\FOPROLYD_App\ReceptionApp\ReceptionApp\bin\Debug\ReceptionApp.exe.config
+C:\Users\kasuya\Documents\GitHub\FOPROLYD_App\ReceptionApp\ReceptionApp\bin\Debug\ReceptionApp.exe
+C:\Users\kasuya\Documents\GitHub\FOPROLYD_App\ReceptionApp\ReceptionApp\bin\Debug\ReceptionApp.pdb
+C:\Users\kasuya\Documents\GitHub\FOPROLYD_App\ReceptionApp\ReceptionApp\obj\Debug\ReceptionApp.csprojAssemblyReference.cache
+C:\Users\kasuya\Documents\GitHub\FOPROLYD_App\ReceptionApp\ReceptionApp\obj\Debug\ReceptionApp.recepcion_form.resources
+C:\Users\kasuya\Documents\GitHub\FOPROLYD_App\ReceptionApp\ReceptionApp\obj\Debug\ReceptionApp.Properties.Resources.resources
+C:\Users\kasuya\Documents\GitHub\FOPROLYD_App\ReceptionApp\ReceptionApp\obj\Debug\ReceptionApp.csproj.GenerateResource.cache
+C:\Users\kasuya\Documents\GitHub\FOPROLYD_App\ReceptionApp\ReceptionApp\obj\Debug\ReceptionApp.csproj.CoreCompileInputs.cache
+C:\Users\kasuya\Documents\GitHub\FOPROLYD_App\ReceptionApp\ReceptionApp\obj\Debug\ReceptionApp.exe
+C:\Users\kasuya\Documents\GitHub\FOPROLYD_App\ReceptionApp\ReceptionApp\obj\Debug\ReceptionApp.pdb

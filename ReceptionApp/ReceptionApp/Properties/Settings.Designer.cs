@@ -33,5 +33,16 @@ namespace ReceptionApp.Properties {
                 return ((string)(this["FOPROLYD_recepConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-T8S12DD\\;Initial Catalog=FOPROLYD_recep;Integrated Security=T" +
+            "rue")]
+        public string FOPROLYD_recepConnectionString1 {
+            get {
+                return ((string)(this["FOPROLYD_recepConnectionString1"]));
+            }
+        }
     }
 }
