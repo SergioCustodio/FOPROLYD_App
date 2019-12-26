@@ -16,7 +16,7 @@ namespace ReceptionApp
         public recepcion_form()
         {
             InitializeComponent();
-            Refresh();
+            Refresh1();
             RefreshC();
             RefreshA();
 
@@ -92,7 +92,7 @@ namespace ReceptionApp
 
         }
 
-        private void Refresh()
+        private void Refresh1()
         {
             dsFOPROLYDTableAdapters.llamadasTableAdapter tableAddapt =
                 new dsFOPROLYDTableAdapters.llamadasTableAdapter();
@@ -131,6 +131,17 @@ namespace ReceptionApp
         {
             comboRubroC.SelectedIndex= -1;
             NotasC.Clear();
+        }
+        private void LimpiarA() {
+            audiencia_combo.SelectedIndex = -1;
+            txt_horaA.Clear();
+            txt_beneficiarioName.Clear();
+            txt_beneficiarioTel.Clear();
+            txt_audienciaCon.Clear();
+            txt_notasA.Clear();
+            DT_audiencias.Refresh();
+            
+
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -197,15 +208,51 @@ namespace ReceptionApp
 
         private void btn_fechaA_Click(object sender, EventArgs e)
         {
+
+            dsFOPROLYDTableAdapters.audienciasTableAdapter TAsaveA = new
+                dsFOPROLYDTableAdapters.audienciasTableAdapter();
+            String IdentificadorA = audiencia_combo.Text;
+            int IdentificadorAu=0;
+
+            //formato de fecha
             DT_audiencias.CustomFormat = "yyyy-MM-dd";
             String FechaDT, HoraA;
+            DateTime horasistema = DateTime.Now;
+
+
+            //fecha datetimepicker
             FechaDT = DT_audiencias.Text;
             HoraA = txt_horaA.Text;
-            
 
-            Console.WriteLine(FechaDT);
-            Console.WriteLine(HoraA);
+            if (IdentificadorA == "Junta Directiva")
+            {
+                IdentificadorAu = 4;
+            }
+            else if (IdentificadorA == "Presidencia")
+            {
+                IdentificadorAu = 3;
+            }
+            else if (IdentificadorA == "Gerencia")
+            {
+                IdentificadorAu = 2;
+            } else if (IdentificadorA == "Subgerencia")
+            {
+                IdentificadorAu = 1;
+            }
 
+            TAsaveA.InsertQA(IdentificadorA,horasistema,HoraA,txt_beneficiarioName.Text,txt_beneficiarioTel.Text,
+                txt_audienciaCon.Text,txt_notasA.Text,IdentificadorAu);
+
+            RefreshA();
+            LimpiarA();
+
+
+
+
+        }
+
+        private void DT_audiencias_ValueChanged(object sender, EventArgs e)
+        {
 
         }
     }
