@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Globalization;
+using System.IO;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace ReceptionApp
 {
@@ -15,10 +17,12 @@ namespace ReceptionApp
     {
         public recepcion_form()
         {
+            
             InitializeComponent();
             Refresh1();
             RefreshC();
             RefreshA();
+           
 
             DT_audiencias.MinDate = DateTime.Today;
         }
@@ -76,7 +80,7 @@ namespace ReceptionApp
 
             TAsave.InsertQ(combo_rubro.Text,FechaHora,Identificador,categoria_combo.Text,notas_txtbox.Text);
 
-            Refresh();
+            Refresh1();
             LimpiarLlamada();
 
         }
@@ -99,6 +103,8 @@ namespace ReceptionApp
             dsFOPROLYD.llamadasDataTable TablasdeDatos = tableAddapt.GetData();
 
             llamadas_datagrid.DataSource = TablasdeDatos;
+            llamadas_datagrid.AutoSizeColumnsMode =
+    DataGridViewAutoSizeColumnsMode.Fill;
 
         }
         private void RefreshC()
@@ -108,6 +114,8 @@ namespace ReceptionApp
             dsFOPROLYD.correspondenciasDataTable TDC = TAC.GetDataC();
 
             dataGridView1.DataSource = TDC; 
+            dataGridView1.AutoSizeColumnsMode =
+    DataGridViewAutoSizeColumnsMode.Fill;
 
         }
         private void RefreshA()
@@ -117,7 +125,7 @@ namespace ReceptionApp
             dsFOPROLYD.audienciasDataTable TDA = TAA.GetDataA();
 
             Datagrid_audiencia.DataSource = TDA;
-
+            Datagrid_audiencia.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
         private void LimpiarLlamada()
         {
@@ -255,5 +263,140 @@ namespace ReceptionApp
         {
 
         }
+
+        private void Exportar_btn_Click(object sender, EventArgs e)
+        {
+            exportarLlamadas();
+
+        }
+
+        private void exportarLlamadas()
+        {
+            if (llamadas_datagrid.Rows.Count > 0)
+            {
+                Microsoft.Office.Interop.Excel.Application llamadasExport = new
+                    Microsoft.Office.Interop.Excel.Application();
+
+                llamadasExport.Application.Workbooks.Add(Type.Missing);
+
+                for (int i = 1; i < llamadas_datagrid.Columns.Count; i++)
+                {
+                    //llamadasExport.Cells[1, i] = llamadas_datagrid.Columns[i - 1].HeaderText;
+                    llamadasExport.Cells[1, 1] = "ID Llamada";
+                    llamadasExport.Cells[1, 2] = "Rubro Llamada";
+                    llamadasExport.Cells[1, 3] = "Fecha Llamada";
+                    llamadasExport.Cells[1, 4] = "Categoría";
+                    llamadasExport.Cells[1, 5] = "Notas";
+
+                }
+
+                for (int j = 0; j < llamadas_datagrid.Rows.Count; j++)
+                {
+                    for (int k = 0; k < llamadas_datagrid.Columns.Count; k++)
+                    {
+
+                        llamadasExport.Cells[j + 2, k + 1] = llamadas_datagrid.Rows[j].Cells[k].Value.ToString();
+
+                    }
+
+                }
+
+                llamadasExport.Columns.AutoFit();
+                llamadasExport.Visible = true;
+
+            }
+
+        }
+
+
+        private void exportarCorrespondencia()
+        {
+            if (dataGridView1.Rows.Count > 0)
+            {
+                Microsoft.Office.Interop.Excel.Application correspondenciaExport = new
+                    Microsoft.Office.Interop.Excel.Application();
+
+                correspondenciaExport.Application.Workbooks.Add(Type.Missing);
+
+                for (int i = 1; i < dataGridView1.Columns.Count; i++)
+                {
+                    //llamadasExport.Cells[1, i] = llamadas_datagrid.Columns[i - 1].HeaderText;
+                    correspondenciaExport.Cells[1, 1] = "ID correspondencia";
+                    correspondenciaExport.Cells[1, 2] = "Rubro correspondencia";
+                    correspondenciaExport.Cells[1, 3] = "Fecha correspondencia";
+                    correspondenciaExport.Cells[1, 4] = "Observaciones";
+                    
+
+                }
+
+                for (int j = 0; j < dataGridView1.Rows.Count; j++)
+                {
+                    for (int k = 0; k < dataGridView1.Columns.Count; k++)
+                    {
+
+                        correspondenciaExport.Cells[j + 2, k + 1] = dataGridView1.Rows[j].Cells[k].Value.ToString();
+
+                    }
+
+                }
+
+                correspondenciaExport.Columns.AutoFit();
+                correspondenciaExport.Visible = true;
+
+            }
+
+        }
+
+        private void exportarAudiencias()
+        {
+            if (Datagrid_audiencia.Rows.Count > 0)
+            {
+                Microsoft.Office.Interop.Excel.Application audienciasExport = new
+                    Microsoft.Office.Interop.Excel.Application();
+
+                audienciasExport.Application.Workbooks.Add(Type.Missing);
+
+                for (int i = 1; i < Datagrid_audiencia.Columns.Count; i++)
+                {
+                    //llamadasExport.Cells[1, i] = llamadas_datagrid.Columns[i - 1].HeaderText;
+                    audienciasExport.Cells[1, 1] = "ID audiencia";
+                    audienciasExport.Cells[1, 2] = "Rubro audiencia";
+                    audienciasExport.Cells[1, 3] = "Fecha audiencia";
+                    audienciasExport.Cells[1, 4] = "Nombre Beneficiario";
+                    audienciasExport.Cells[1, 5] = "Teléfono";
+                    audienciasExport.Cells[1, 6] = "Audiencia con:";
+                    audienciasExport.Cells[1, 7] = "Observaciones";
+                    audienciasExport.Cells[1, 8] = "Hora de Audiencia";
+
+                }
+
+                for (int j = 0; j < Datagrid_audiencia.Rows.Count; j++)
+                {
+                    for (int k = 0; k < Datagrid_audiencia.Columns.Count; k++)
+                    {
+
+                        audienciasExport.Cells[j + 2, k + 1] = Datagrid_audiencia.Rows[j].Cells[k].Value.ToString();
+
+                    }
+
+                }
+
+                audienciasExport.Columns.AutoFit();
+                audienciasExport.Visible = true;
+
+            }
+
+        }
+
+        private void exportar_correspondencia_Click(object sender, EventArgs e)
+        {
+            exportarCorrespondencia();
+        }
+
+        private void exportar_audiencias_Click(object sender, EventArgs e)
+        {
+            exportarAudiencias();
+        }
     }
-}
+ }
+
