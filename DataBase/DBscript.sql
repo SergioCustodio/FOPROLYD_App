@@ -30,7 +30,34 @@ select Rubro_llamada, COUNT(Rubro_llamada) AS Cantidad FROM llamadas
 GROUP BY Rubro_llamada;
 
 
-Create table Correspondencias(
-
-
+Create table correspondencias(
+ID_correspondencia int not null IDENTITY PRIMARY KEY,
+Rubro_correspondencia varchar(25) not null,
+Fecha_correspondencia datetime not null,
+Identificador_c int not null
 );
+
+select ID_correspondencia as ID, Rubro_correspondencia as Rubro, Fecha_correspondencia as Fecha, observaciones as Observaciones from correspondencias;
+
+alter table correspondencias add observaciones varchar(350);
+
+create table audiencias(
+ID_a int not null IDENTITY PRIMARY KEY,
+Rubro_a varchar(25) not null,
+Fecha_a datetime not null,
+Hora_a varchar(10) not null,
+nombre_a varchar(50) not null,
+telefono_a varchar(10),
+audiencia_main varchar(50),
+observaciones_a varchar(350)
+);
+
+--alter table audiencias add Identificador int not null;
+
+
+select ID_a as ID, Rubro_a as Rubro, Fecha_a as Fecha, Hora_a as Hora, nombre_a as 'Nombre Beneficiario', telefono_a as 'Teléfono', 
+	audiencia_main as 'Audiencia con', observaciones_a as Observaciones from audiencias
+
+select * from audiencias
+
+Truncate Table audiencias
