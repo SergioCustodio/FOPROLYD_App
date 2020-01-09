@@ -17,7 +17,7 @@ namespace ReceptionApp
     {
         public recepcion_form()
         {
-            
+
             InitializeComponent();
             Refresh1();
             RefreshC();
@@ -50,47 +50,47 @@ namespace ReceptionApp
         private void guardarllamada_btn_Click(object sender, EventArgs e)
         {
 
-            if (combo_rubro.SelectedIndex==-1 || categoria_combo.SelectedIndex == -1)
+            if (combo_rubro.SelectedIndex == -1 || categoria_combo.SelectedIndex == -1)
             {
                 MessageBox.Show("Rellene los campos obligatorios..");
-                
-
-            }else { 
-
-            String Categoria=categoria_combo.Text;
-            int Identificador=0;
-
-            DateTime FechaHora = DateTime.Now;
-            dsFOPROLYDTableAdapters.llamadasTableAdapter TAsave =
-                new dsFOPROLYDTableAdapters.llamadasTableAdapter();
-
-            if (Categoria == "Beneficiarios")
-            {
-                Identificador = 6;
-            } else if (Categoria == "Proveedores")
-            {
-                Identificador = 5;
-            } else if (Categoria == "Agencias")
-            {
-                Identificador = 4;
-            } else if (Categoria == "Insultos")
-            {
-                Identificador = 3;
-            }
-            else if (Categoria == "Personales")
-            {
-                Identificador = 2;
-            }
-            else if (Categoria == "I.Publicas")
-            {
-                Identificador = 1;
-            }
 
 
-            TAsave.InsertQ(combo_rubro.Text,FechaHora,Identificador,categoria_combo.Text,notas_txtbox.Text);
+            } else {
 
-            Refresh1();
-            LimpiarLlamada();
+                String Categoria = categoria_combo.Text;
+                int Identificador = 0;
+
+                DateTime FechaHora = DateTime.Now;
+                dsFOPROLYDTableAdapters.llamadasTableAdapter TAsave =
+                    new dsFOPROLYDTableAdapters.llamadasTableAdapter();
+
+                if (Categoria == "Beneficiarios")
+                {
+                    Identificador = 6;
+                } else if (Categoria == "Proveedores")
+                {
+                    Identificador = 5;
+                } else if (Categoria == "Agencias")
+                {
+                    Identificador = 4;
+                } else if (Categoria == "Insultos")
+                {
+                    Identificador = 3;
+                }
+                else if (Categoria == "Personales")
+                {
+                    Identificador = 2;
+                }
+                else if (Categoria == "I.Publicas")
+                {
+                    Identificador = 1;
+                }
+
+
+                TAsave.InsertQ(combo_rubro.Text, FechaHora, Identificador, categoria_combo.Text, notas_txtbox.Text);
+
+                Refresh1();
+                LimpiarLlamada();
             }
 
         }
@@ -102,7 +102,7 @@ namespace ReceptionApp
             DateTime now = DateTime.Now;
             Console.WriteLine("NOW: " + now);
             Console.WriteLine(categoria_combo.Text);
-           Console.WriteLine( combo_rubro.Text);
+            Console.WriteLine(combo_rubro.Text);
 
         }
 
@@ -123,7 +123,7 @@ namespace ReceptionApp
                 new dsFOPROLYDTableAdapters.correspondenciasTableAdapter();
             dsFOPROLYD.correspondenciasDataTable TDC = TAC.GetDataC();
 
-            dataGridView1.DataSource = TDC; 
+            dataGridView1.DataSource = TDC;
             dataGridView1.AutoSizeColumnsMode =
     DataGridViewAutoSizeColumnsMode.Fill;
 
@@ -161,11 +161,13 @@ namespace ReceptionApp
         }
         private void LimpiarC()
         {
-            comboRubroC.SelectedIndex= -1;
+            comboRubroC.SelectedIndex = -1;
+            comboRubroC.Text = "Seleccione---";
             NotasC.Clear();
         }
         private void LimpiarA() {
             audiencia_combo.SelectedIndex = -1;
+            audiencia_combo.Text = "Seleccione---";
             txt_horaA.Clear();
             txt_beneficiarioName.Clear();
             txt_beneficiarioTel.Clear();
@@ -203,37 +205,45 @@ namespace ReceptionApp
 
         private void saveC_btn_Click(object sender, EventArgs e)
         {
-            String CategoriaC = comboRubroC.Text;
-            int IdentificadorC = 0;
+            if (comboRubroC.SelectedIndex == -1)
+            {
+                MessageBox.Show("Complete los campos obligatorios");
+            }
+            else
+            {
 
-            DateTime FechaHoraC = DateTime.Now;
-            dsFOPROLYDTableAdapters.correspondenciasTableAdapter TAsaveC =
-                new dsFOPROLYDTableAdapters.correspondenciasTableAdapter();
+                String CategoriaC = comboRubroC.Text;
+                int IdentificadorC = 0;
 
-            if (CategoriaC == " Cartas Beneficiarios")
-            {
-                IdentificadorC = 5;
-            }
-            else if (CategoriaC == "Cartas Estatales")
-            {
-                IdentificadorC = 4;
-            }
-            else if (CategoriaC == "Doc. ORSAM")
-            {
-                IdentificadorC = 3;
-            }
-            else if (CategoriaC == "Doc. ORCHAL")
-            {
-                IdentificadorC = 2;
-            }
-            else if (CategoriaC == "Cartas Empresa privada")
-            {
-                IdentificadorC = 1;
-            }
+                DateTime FechaHoraC = DateTime.Now;
+                dsFOPROLYDTableAdapters.correspondenciasTableAdapter TAsaveC =
+                    new dsFOPROLYDTableAdapters.correspondenciasTableAdapter();
 
-            TAsaveC.InsertQC(comboRubroC.Text, FechaHoraC, IdentificadorC,NotasC.Text);
-            RefreshC();
-            LimpiarC();
+                if (CategoriaC == " Cartas Beneficiarios")
+                {
+                    IdentificadorC = 5;
+                }
+                else if (CategoriaC == "Cartas Estatales")
+                {
+                    IdentificadorC = 4;
+                }
+                else if (CategoriaC == "Doc. ORSAM")
+                {
+                    IdentificadorC = 3;
+                }
+                else if (CategoriaC == "Doc. ORCHAL")
+                {
+                    IdentificadorC = 2;
+                }
+                else if (CategoriaC == "Cartas Empresa privada")
+                {
+                    IdentificadorC = 1;
+                }
+
+                TAsaveC.InsertQC(comboRubroC.Text, FechaHoraC, IdentificadorC, NotasC.Text);
+                RefreshC();
+                LimpiarC();
+            }
         }
 
         private void guardarAtencion()
@@ -260,11 +270,11 @@ namespace ReceptionApp
                 String Rubro_atencion = c_beneficiario_atencion.Text;
                 String obseracion_atencion = txt_atencion.Text;
 
-                TAsaveAtencion.InsertAtencion(Rubro_atencion,Tipo_atencion,obseracion_atencion,fecha_atencion);
+                TAsaveAtencion.InsertAtencion(Rubro_atencion, Tipo_atencion, obseracion_atencion, fecha_atencion);
                 RefreshAtencion();
                 LimpiarAtencion();
             }
-          
+
         }
 
         private void Refrescar_btn_Click_1(object sender, EventArgs e)
@@ -275,45 +285,54 @@ namespace ReceptionApp
 
         private void btn_fechaA_Click(object sender, EventArgs e)
         {
-
-            dsFOPROLYDTableAdapters.audienciasTableAdapter TAsaveA = new
-                dsFOPROLYDTableAdapters.audienciasTableAdapter();
-            String IdentificadorA = audiencia_combo.Text;
-            int IdentificadorAu=0;
-
-            //formato de fecha
-            DT_audiencias.CustomFormat = "yyyy-MM-dd";
-            String FechaDT, HoraA;
-            DateTime horasistema = DateTime.Now;
-
-
-            //fecha datetimepicker
-            FechaDT = DT_audiencias.Text;
-            HoraA = txt_horaA.Text;
-
-            if (IdentificadorA == "Junta Directiva")
+            if (audiencia_combo.SelectedIndex == -1 || txt_beneficiarioName.Equals(" ") || txt_horaA.Equals(""))
             {
-                IdentificadorAu = 4;
+                MessageBox.Show("Complete los campos obligatorios");
+
+
             }
-            else if (IdentificadorA == "Presidencia")
+            else
             {
-                IdentificadorAu = 3;
+
+                dsFOPROLYDTableAdapters.audienciasTableAdapter TAsaveA = new
+                    dsFOPROLYDTableAdapters.audienciasTableAdapter();
+                String IdentificadorA = audiencia_combo.Text;
+                int IdentificadorAu = 0;
+
+                //formato de fecha
+                DT_audiencias.CustomFormat = "yyyy-MM-dd";
+                String FechaDT, HoraA;
+                DateTime horasistema = DateTime.Now;
+
+
+                //fecha datetimepicker
+                FechaDT = DT_audiencias.Text;
+                HoraA = txt_horaA.Text;
+
+                if (IdentificadorA == "Junta Directiva")
+                {
+                    IdentificadorAu = 4;
+                }
+                else if (IdentificadorA == "Presidencia")
+                {
+                    IdentificadorAu = 3;
+                }
+                else if (IdentificadorA == "Gerencia")
+                {
+                    IdentificadorAu = 2;
+                }
+                else if (IdentificadorA == "Subgerencia")
+                {
+                    IdentificadorAu = 1;
+                }
+
+                TAsaveA.InsertQA(IdentificadorA, horasistema, HoraA, txt_beneficiarioName.Text, txt_beneficiarioTel.Text,
+                    txt_audienciaCon.Text, txt_notasA.Text, IdentificadorAu);
+
+                RefreshA();
+                LimpiarA();
+
             }
-            else if (IdentificadorA == "Gerencia")
-            {
-                IdentificadorAu = 2;
-            } else if (IdentificadorA == "Subgerencia")
-            {
-                IdentificadorAu = 1;
-            }
-
-            TAsaveA.InsertQA(IdentificadorA,horasistema,HoraA,txt_beneficiarioName.Text,txt_beneficiarioTel.Text,
-                txt_audienciaCon.Text,txt_notasA.Text,IdentificadorAu);
-
-            RefreshA();
-            LimpiarA();
-
-
 
 
         }

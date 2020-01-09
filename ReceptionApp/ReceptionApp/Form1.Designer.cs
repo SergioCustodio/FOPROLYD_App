@@ -80,6 +80,7 @@
             this.exportar_antencion = new System.Windows.Forms.Button();
             this.atencion_datagrid = new System.Windows.Forms.DataGridView();
             this.txt_atencion = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.llamadas_tab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.llamadas_datagrid)).BeginInit();
@@ -561,6 +562,8 @@
             // 
             // atencion_tab
             // 
+            this.atencion_tab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(57)))), ((int)(((byte)(69)))));
+            this.atencion_tab.Controls.Add(this.label11);
             this.atencion_tab.Controls.Add(this.txt_atencion);
             this.atencion_tab.Controls.Add(this.atencion_datagrid);
             this.atencion_tab.Controls.Add(this.exportar_antencion);
@@ -573,11 +576,12 @@
             this.atencion_tab.Size = new System.Drawing.Size(910, 413);
             this.atencion_tab.TabIndex = 3;
             this.atencion_tab.Text = "Atención al publico";
-            this.atencion_tab.UseVisualStyleBackColor = true;
             this.atencion_tab.Click += new System.EventHandler(this.atencion_tab_Click);
             // 
             // guardar_atencion
             // 
+            this.guardar_atencion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.guardar_atencion.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.guardar_atencion.Location = new System.Drawing.Point(502, 27);
             this.guardar_atencion.Name = "guardar_atencion";
             this.guardar_atencion.Size = new System.Drawing.Size(132, 74);
@@ -598,15 +602,17 @@
             "Retiro de Medicamentos",
             "Información de creditos",
             "Inf. Modulos de Producción"});
-            this.c_beneficiario_atencion.Location = new System.Drawing.Point(329, 42);
+            this.c_beneficiario_atencion.Location = new System.Drawing.Point(336, 44);
             this.c_beneficiario_atencion.Name = "c_beneficiario_atencion";
             this.c_beneficiario_atencion.Size = new System.Drawing.Size(152, 21);
             this.c_beneficiario_atencion.TabIndex = 1;
+            this.c_beneficiario_atencion.Text = "Seleccione---";
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.rb_proveedor);
             this.groupBox1.Controls.Add(this.rb_beneficiario);
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.groupBox1.Location = new System.Drawing.Point(17, 6);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(306, 95);
@@ -617,9 +623,11 @@
             // rb_proveedor
             // 
             this.rb_proveedor.AutoSize = true;
+            this.rb_proveedor.Font = new System.Drawing.Font("Helvetica", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rb_proveedor.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.rb_proveedor.Location = new System.Drawing.Point(173, 40);
             this.rb_proveedor.Name = "rb_proveedor";
-            this.rb_proveedor.Size = new System.Drawing.Size(85, 17);
+            this.rb_proveedor.Size = new System.Drawing.Size(86, 16);
             this.rb_proveedor.TabIndex = 1;
             this.rb_proveedor.TabStop = true;
             this.rb_proveedor.Text = "Proveedores";
@@ -629,9 +637,11 @@
             // rb_beneficiario
             // 
             this.rb_beneficiario.AutoSize = true;
+            this.rb_beneficiario.Font = new System.Drawing.Font("Helvetica", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rb_beneficiario.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.rb_beneficiario.Location = new System.Drawing.Point(34, 40);
             this.rb_beneficiario.Name = "rb_beneficiario";
-            this.rb_beneficiario.Size = new System.Drawing.Size(80, 17);
+            this.rb_beneficiario.Size = new System.Drawing.Size(79, 16);
             this.rb_beneficiario.TabIndex = 0;
             this.rb_beneficiario.TabStop = true;
             this.rb_beneficiario.Text = "Beneficiario";
@@ -649,6 +659,7 @@
             // 
             // report_btn
             // 
+            this.report_btn.Enabled = false;
             this.report_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.report_btn.Location = new System.Drawing.Point(609, 482);
             this.report_btn.Name = "report_btn";
@@ -656,6 +667,7 @@
             this.report_btn.TabIndex = 1;
             this.report_btn.Text = "Consolidados";
             this.report_btn.UseVisualStyleBackColor = true;
+            this.report_btn.Visible = false;
             // 
             // salir_btn
             // 
@@ -674,6 +686,8 @@
             // 
             // exportar_antencion
             // 
+            this.exportar_antencion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.exportar_antencion.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.exportar_antencion.Location = new System.Drawing.Point(640, 27);
             this.exportar_antencion.Name = "exportar_antencion";
             this.exportar_antencion.Size = new System.Drawing.Size(132, 74);
@@ -700,6 +714,17 @@
             this.txt_atencion.Name = "txt_atencion";
             this.txt_atencion.Size = new System.Drawing.Size(887, 49);
             this.txt_atencion.TabIndex = 6;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Helvetica", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label11.Location = new System.Drawing.Point(17, 115);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(80, 12);
+            this.label11.TabIndex = 7;
+            this.label11.Text = "Observaciones";
             // 
             // recepcion_form
             // 
@@ -790,6 +815,7 @@
         private System.Windows.Forms.DataGridView atencion_datagrid;
         private System.Windows.Forms.Button exportar_antencion;
         private System.Windows.Forms.TextBox txt_atencion;
+        private System.Windows.Forms.Label label11;
     }
 }
 
