@@ -22,7 +22,8 @@ namespace ReceptionApp
             Refresh1();
             RefreshC();
             RefreshA();
-           
+            RefreshAtencion();
+
 
             DT_audiencias.MinDate = DateTime.Today;
         }
@@ -48,6 +49,14 @@ namespace ReceptionApp
 
         private void guardarllamada_btn_Click(object sender, EventArgs e)
         {
+
+            if (combo_rubro.SelectedIndex==-1 || categoria_combo.SelectedIndex == -1)
+            {
+                MessageBox.Show("Rellene los campos obligatorios..");
+                
+
+            }else { 
+
             String Categoria=categoria_combo.Text;
             int Identificador=0;
 
@@ -82,6 +91,7 @@ namespace ReceptionApp
 
             Refresh1();
             LimpiarLlamada();
+            }
 
         }
 
@@ -127,10 +137,24 @@ namespace ReceptionApp
             Datagrid_audiencia.DataSource = TDA;
             Datagrid_audiencia.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
+
+        private void RefreshAtencion()
+        {
+            dsFOPROLYDTableAdapters.atencionTableAdapter TAATENCION =
+                new dsFOPROLYDTableAdapters.atencionTableAdapter();
+            dsFOPROLYD.atencionDataTable TDATENCION = TAATENCION.GetAtencion();
+
+            atencion_datagrid.DataSource = TDATENCION;
+            atencion_datagrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        }
+
+
         private void LimpiarLlamada()
         {
             combo_rubro.SelectedIndex = -1;
+            combo_rubro.Text = "Seleccione---";
             categoria_combo.SelectedIndex = -1;
+            categoria_combo.Text = "Seleccione---";
             notas_txtbox.Clear();
 
 
@@ -148,8 +172,13 @@ namespace ReceptionApp
             txt_audienciaCon.Clear();
             txt_notasA.Clear();
             DT_audiencias.Refresh();
-            
+        }
 
+        private void LimpiarAtencion()
+        {
+            c_beneficiario_atencion.SelectedIndex = -1;
+            c_beneficiario_atencion.Text = "Seleccione---";
+            txt_atencion.Clear();
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -203,9 +232,39 @@ namespace ReceptionApp
             }
 
             TAsaveC.InsertQC(comboRubroC.Text, FechaHoraC, IdentificadorC,NotasC.Text);
-
             RefreshC();
             LimpiarC();
+        }
+
+        private void guardarAtencion()
+        {
+
+            if ((rb_beneficiario.Checked == false && rb_proveedor.Checked == false) || c_beneficiario_atencion.SelectedIndex == -1)
+            {
+                MessageBox.Show("Complete los campos obligatorios");
+            }
+            else
+            {
+                DateTime fecha_atencion = DateTime.Now;
+                dsFOPROLYDTableAdapters.atencionTableAdapter TAsaveAtencion =
+                    new dsFOPROLYDTableAdapters.atencionTableAdapter();
+                String Tipo_atencion = "";
+                if (rb_beneficiario.Checked == true)
+                {
+                    Tipo_atencion = "Beneficiario";
+                }
+                else if (rb_proveedor.Checked == true)
+                {
+                    Tipo_atencion = "Proveedor";
+                }
+                String Rubro_atencion = c_beneficiario_atencion.Text;
+                String obseracion_atencion = txt_atencion.Text;
+
+                TAsaveAtencion.InsertAtencion(Rubro_atencion,Tipo_atencion,obseracion_atencion,fecha_atencion);
+                RefreshAtencion();
+                LimpiarAtencion();
+            }
+          
         }
 
         private void Refrescar_btn_Click_1(object sender, EventArgs e)
@@ -308,6 +367,43 @@ namespace ReceptionApp
 
         }
 
+        private void exportarAtencion()
+        {
+            if (atencion_datagrid.Rows.Count > 0)
+            {
+                Microsoft.Office.Interop.Excel.Application  AtencionExport = new
+                    Microsoft.Office.Interop.Excel.Application();
+
+                AtencionExport.Application.Workbooks.Add(Type.Missing);
+
+                for (int i = 1; i < atencion_datagrid.Columns.Count; i++)
+                {
+                    //llamadasExport.Cells[1, i] = llamadas_datagrid.Columns[i - 1].HeaderText;
+                    AtencionExport.Cells[1, 1] = "ID Atencion";
+                    AtencionExport.Cells[1, 2] = "Rubro Atención";
+                    AtencionExport.Cells[1, 3] = "Fecha Atención";
+                    AtencionExport.Cells[1, 4] = "Tipo";
+                    AtencionExport.Cells[1, 5] = "Observación";
+
+                }
+
+                for (int j = 0; j < atencion_datagrid.Rows.Count; j++)
+                {
+                    for (int k = 0; k < atencion_datagrid.Columns.Count; k++)
+                    {
+
+                        AtencionExport.Cells[j + 2, k + 1] = atencion_datagrid.Rows[j].Cells[k].Value.ToString();
+
+                    }
+
+                }
+
+                AtencionExport.Columns.AutoFit();
+                AtencionExport.Visible = true;
+
+            }
+
+        }
 
         private void exportarCorrespondencia()
         {
@@ -396,6 +492,26 @@ namespace ReceptionApp
         private void exportar_audiencias_Click(object sender, EventArgs e)
         {
             exportarAudiencias();
+        }
+
+        private void atencion_tab_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void guardar_atencion_Click(object sender, EventArgs e)
+        {
+            guardarAtencion();
+        }
+
+        private void rb_proveedor_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void exportar_antencion_Click(object sender, EventArgs e)
+        {
+            exportarAtencion();
         }
     }
  }

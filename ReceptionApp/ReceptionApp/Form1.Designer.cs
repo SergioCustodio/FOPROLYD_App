@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.llamadas_tab = new System.Windows.Forms.TabPage();
             this.Exportar_btn = new System.Windows.Forms.Button();
@@ -42,12 +42,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.llamadas_datagrid = new System.Windows.Forms.DataGridView();
             this.correspondencia_tab = new System.Windows.Forms.TabPage();
+            this.exportar_correspondencia = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.NotasC = new System.Windows.Forms.TextBox();
             this.comboRubroC = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.saveC_btn = new System.Windows.Forms.Button();
             this.audiencias_tab = new System.Windows.Forms.TabPage();
+            this.exportar_audiencias = new System.Windows.Forms.Button();
             this.Datagrid_audiencia = new System.Windows.Forms.DataGridView();
             this.label10 = new System.Windows.Forms.Label();
             this.txt_audienciaCon = new System.Windows.Forms.TextBox();
@@ -65,14 +67,19 @@
             this.btn_saveAudiencia = new System.Windows.Forms.Button();
             this.DT_audiencias = new System.Windows.Forms.DateTimePicker();
             this.atencion_tab = new System.Windows.Forms.TabPage();
+            this.guardar_atencion = new System.Windows.Forms.Button();
+            this.c_beneficiario_atencion = new System.Windows.Forms.ComboBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rb_proveedor = new System.Windows.Forms.RadioButton();
+            this.rb_beneficiario = new System.Windows.Forms.RadioButton();
             this.llamadasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.fOPROLYD_recepDataSet = new ReceptionApp.FOPROLYD_recepDataSet();
             this.report_btn = new System.Windows.Forms.Button();
             this.salir_btn = new System.Windows.Forms.Button();
             this.llamadasTableAdapter = new ReceptionApp.FOPROLYD_recepDataSetTableAdapters.llamadasTableAdapter();
-            this.Refrescar_btn = new System.Windows.Forms.Button();
-            this.exportar_correspondencia = new System.Windows.Forms.Button();
-            this.exportar_audiencias = new System.Windows.Forms.Button();
+            this.exportar_antencion = new System.Windows.Forms.Button();
+            this.atencion_datagrid = new System.Windows.Forms.DataGridView();
+            this.txt_atencion = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.llamadas_tab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.llamadas_datagrid)).BeginInit();
@@ -80,8 +87,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.audiencias_tab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Datagrid_audiencia)).BeginInit();
+            this.atencion_tab.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.llamadasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fOPROLYD_recepDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.atencion_datagrid)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -233,23 +243,23 @@
             this.llamadas_datagrid.AllowUserToDeleteRows = false;
             this.llamadas_datagrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.llamadas_datagrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.llamadas_datagrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.llamadas_datagrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.llamadas_datagrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.llamadas_datagrid.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.llamadas_datagrid.DefaultCellStyle = dataGridViewCellStyle4;
             this.llamadas_datagrid.Location = new System.Drawing.Point(24, 208);
             this.llamadas_datagrid.Name = "llamadas_datagrid";
             this.llamadas_datagrid.ReadOnly = true;
@@ -273,6 +283,18 @@
             this.correspondencia_tab.Size = new System.Drawing.Size(910, 413);
             this.correspondencia_tab.TabIndex = 1;
             this.correspondencia_tab.Text = "Correspondencias";
+            // 
+            // exportar_correspondencia
+            // 
+            this.exportar_correspondencia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.exportar_correspondencia.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.exportar_correspondencia.Location = new System.Drawing.Point(809, 69);
+            this.exportar_correspondencia.Name = "exportar_correspondencia";
+            this.exportar_correspondencia.Size = new System.Drawing.Size(95, 72);
+            this.exportar_correspondencia.TabIndex = 7;
+            this.exportar_correspondencia.Text = "Abrir en Excel";
+            this.exportar_correspondencia.UseVisualStyleBackColor = true;
+            this.exportar_correspondencia.Click += new System.EventHandler(this.exportar_correspondencia_Click);
             // 
             // dataGridView1
             // 
@@ -307,6 +329,7 @@
             this.comboRubroC.Name = "comboRubroC";
             this.comboRubroC.Size = new System.Drawing.Size(121, 21);
             this.comboRubroC.TabIndex = 3;
+            this.comboRubroC.Text = "Seleccione---";
             this.comboRubroC.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label3
@@ -359,6 +382,19 @@
             this.audiencias_tab.Size = new System.Drawing.Size(910, 413);
             this.audiencias_tab.TabIndex = 2;
             this.audiencias_tab.Text = "Audiencias";
+            // 
+            // exportar_audiencias
+            // 
+            this.exportar_audiencias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.exportar_audiencias.Font = new System.Drawing.Font("Helvetica", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exportar_audiencias.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.exportar_audiencias.Location = new System.Drawing.Point(818, 134);
+            this.exportar_audiencias.Name = "exportar_audiencias";
+            this.exportar_audiencias.Size = new System.Drawing.Size(86, 59);
+            this.exportar_audiencias.TabIndex = 17;
+            this.exportar_audiencias.Text = "Abrir en Excel";
+            this.exportar_audiencias.UseVisualStyleBackColor = true;
+            this.exportar_audiencias.Click += new System.EventHandler(this.exportar_audiencias_Click);
             // 
             // Datagrid_audiencia
             // 
@@ -491,6 +527,7 @@
             this.audiencia_combo.Name = "audiencia_combo";
             this.audiencia_combo.Size = new System.Drawing.Size(134, 21);
             this.audiencia_combo.TabIndex = 0;
+            this.audiencia_combo.Text = "Seleccione---";
             // 
             // txt_horaA
             // 
@@ -524,6 +561,12 @@
             // 
             // atencion_tab
             // 
+            this.atencion_tab.Controls.Add(this.txt_atencion);
+            this.atencion_tab.Controls.Add(this.atencion_datagrid);
+            this.atencion_tab.Controls.Add(this.exportar_antencion);
+            this.atencion_tab.Controls.Add(this.guardar_atencion);
+            this.atencion_tab.Controls.Add(this.c_beneficiario_atencion);
+            this.atencion_tab.Controls.Add(this.groupBox1);
             this.atencion_tab.Location = new System.Drawing.Point(4, 59);
             this.atencion_tab.Name = "atencion_tab";
             this.atencion_tab.Padding = new System.Windows.Forms.Padding(3);
@@ -531,6 +574,68 @@
             this.atencion_tab.TabIndex = 3;
             this.atencion_tab.Text = "Atención al publico";
             this.atencion_tab.UseVisualStyleBackColor = true;
+            this.atencion_tab.Click += new System.EventHandler(this.atencion_tab_Click);
+            // 
+            // guardar_atencion
+            // 
+            this.guardar_atencion.Location = new System.Drawing.Point(502, 27);
+            this.guardar_atencion.Name = "guardar_atencion";
+            this.guardar_atencion.Size = new System.Drawing.Size(132, 74);
+            this.guardar_atencion.TabIndex = 3;
+            this.guardar_atencion.Text = "Guardar";
+            this.guardar_atencion.UseVisualStyleBackColor = true;
+            this.guardar_atencion.Click += new System.EventHandler(this.guardar_atencion_Click);
+            // 
+            // c_beneficiario_atencion
+            // 
+            this.c_beneficiario_atencion.FormattingEnabled = true;
+            this.c_beneficiario_atencion.Items.AddRange(new object[] {
+            "Factura",
+            "Quedan",
+            "Cheques",
+            "Firma de actas",
+            "Insultos",
+            "Retiro de Medicamentos",
+            "Información de creditos",
+            "Inf. Modulos de Producción"});
+            this.c_beneficiario_atencion.Location = new System.Drawing.Point(329, 42);
+            this.c_beneficiario_atencion.Name = "c_beneficiario_atencion";
+            this.c_beneficiario_atencion.Size = new System.Drawing.Size(152, 21);
+            this.c_beneficiario_atencion.TabIndex = 1;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.rb_proveedor);
+            this.groupBox1.Controls.Add(this.rb_beneficiario);
+            this.groupBox1.Location = new System.Drawing.Point(17, 6);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(306, 95);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Tipo de Atención";
+            // 
+            // rb_proveedor
+            // 
+            this.rb_proveedor.AutoSize = true;
+            this.rb_proveedor.Location = new System.Drawing.Point(173, 40);
+            this.rb_proveedor.Name = "rb_proveedor";
+            this.rb_proveedor.Size = new System.Drawing.Size(85, 17);
+            this.rb_proveedor.TabIndex = 1;
+            this.rb_proveedor.TabStop = true;
+            this.rb_proveedor.Text = "Proveedores";
+            this.rb_proveedor.UseVisualStyleBackColor = true;
+            this.rb_proveedor.CheckedChanged += new System.EventHandler(this.rb_proveedor_CheckedChanged);
+            // 
+            // rb_beneficiario
+            // 
+            this.rb_beneficiario.AutoSize = true;
+            this.rb_beneficiario.Location = new System.Drawing.Point(34, 40);
+            this.rb_beneficiario.Name = "rb_beneficiario";
+            this.rb_beneficiario.Size = new System.Drawing.Size(80, 17);
+            this.rb_beneficiario.TabIndex = 0;
+            this.rb_beneficiario.TabStop = true;
+            this.rb_beneficiario.Text = "Beneficiario";
+            this.rb_beneficiario.UseVisualStyleBackColor = true;
             // 
             // llamadasBindingSource
             // 
@@ -549,7 +654,7 @@
             this.report_btn.Name = "report_btn";
             this.report_btn.Size = new System.Drawing.Size(152, 38);
             this.report_btn.TabIndex = 1;
-            this.report_btn.Text = "Reportes";
+            this.report_btn.Text = "Consolidados";
             this.report_btn.UseVisualStyleBackColor = true;
             // 
             // salir_btn
@@ -567,40 +672,34 @@
             // 
             this.llamadasTableAdapter.ClearBeforeFill = true;
             // 
-            // Refrescar_btn
+            // exportar_antencion
             // 
-            this.Refrescar_btn.Location = new System.Drawing.Point(1, 486);
-            this.Refrescar_btn.Name = "Refrescar_btn";
-            this.Refrescar_btn.Size = new System.Drawing.Size(102, 34);
-            this.Refrescar_btn.TabIndex = 3;
-            this.Refrescar_btn.Text = "Refrescar";
-            this.Refrescar_btn.UseVisualStyleBackColor = true;
-            this.Refrescar_btn.Click += new System.EventHandler(this.Refrescar_btn_Click_1);
+            this.exportar_antencion.Location = new System.Drawing.Point(640, 27);
+            this.exportar_antencion.Name = "exportar_antencion";
+            this.exportar_antencion.Size = new System.Drawing.Size(132, 74);
+            this.exportar_antencion.TabIndex = 4;
+            this.exportar_antencion.Text = "Exportar a Excel";
+            this.exportar_antencion.UseVisualStyleBackColor = true;
+            this.exportar_antencion.Click += new System.EventHandler(this.exportar_antencion_Click);
             // 
-            // exportar_correspondencia
+            // atencion_datagrid
             // 
-            this.exportar_correspondencia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.exportar_correspondencia.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.exportar_correspondencia.Location = new System.Drawing.Point(809, 69);
-            this.exportar_correspondencia.Name = "exportar_correspondencia";
-            this.exportar_correspondencia.Size = new System.Drawing.Size(95, 72);
-            this.exportar_correspondencia.TabIndex = 7;
-            this.exportar_correspondencia.Text = "Abrir en Excel";
-            this.exportar_correspondencia.UseVisualStyleBackColor = true;
-            this.exportar_correspondencia.Click += new System.EventHandler(this.exportar_correspondencia_Click);
+            this.atencion_datagrid.AllowUserToAddRows = false;
+            this.atencion_datagrid.AllowUserToDeleteRows = false;
+            this.atencion_datagrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.atencion_datagrid.Location = new System.Drawing.Point(17, 189);
+            this.atencion_datagrid.Name = "atencion_datagrid";
+            this.atencion_datagrid.ReadOnly = true;
+            this.atencion_datagrid.Size = new System.Drawing.Size(887, 215);
+            this.atencion_datagrid.TabIndex = 5;
             // 
-            // exportar_audiencias
+            // txt_atencion
             // 
-            this.exportar_audiencias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.exportar_audiencias.Font = new System.Drawing.Font("Helvetica", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exportar_audiencias.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.exportar_audiencias.Location = new System.Drawing.Point(818, 134);
-            this.exportar_audiencias.Name = "exportar_audiencias";
-            this.exportar_audiencias.Size = new System.Drawing.Size(86, 59);
-            this.exportar_audiencias.TabIndex = 17;
-            this.exportar_audiencias.Text = "Abrir en Excel";
-            this.exportar_audiencias.UseVisualStyleBackColor = true;
-            this.exportar_audiencias.Click += new System.EventHandler(this.exportar_audiencias_Click);
+            this.txt_atencion.Location = new System.Drawing.Point(17, 134);
+            this.txt_atencion.Multiline = true;
+            this.txt_atencion.Name = "txt_atencion";
+            this.txt_atencion.Size = new System.Drawing.Size(887, 49);
+            this.txt_atencion.TabIndex = 6;
             // 
             // recepcion_form
             // 
@@ -609,7 +708,6 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(57)))), ((int)(((byte)(69)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(922, 524);
-            this.Controls.Add(this.Refrescar_btn);
             this.Controls.Add(this.salir_btn);
             this.Controls.Add(this.report_btn);
             this.Controls.Add(this.tabControl1);
@@ -630,8 +728,13 @@
             this.audiencias_tab.ResumeLayout(false);
             this.audiencias_tab.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Datagrid_audiencia)).EndInit();
+            this.atencion_tab.ResumeLayout(false);
+            this.atencion_tab.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.llamadasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fOPROLYD_recepDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.atencion_datagrid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -659,7 +762,6 @@
         private System.Windows.Forms.Button saveC_btn;
         private System.Windows.Forms.TextBox NotasC;
         private System.Windows.Forms.ComboBox comboRubroC;
-        private System.Windows.Forms.Button Refrescar_btn;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DateTimePicker DT_audiencias;
         private System.Windows.Forms.TextBox txt_horaA;
@@ -680,6 +782,14 @@
         private System.Windows.Forms.Button Exportar_btn;
         private System.Windows.Forms.Button exportar_correspondencia;
         private System.Windows.Forms.Button exportar_audiencias;
+        private System.Windows.Forms.Button guardar_atencion;
+        private System.Windows.Forms.ComboBox c_beneficiario_atencion;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton rb_proveedor;
+        private System.Windows.Forms.RadioButton rb_beneficiario;
+        private System.Windows.Forms.DataGridView atencion_datagrid;
+        private System.Windows.Forms.Button exportar_antencion;
+        private System.Windows.Forms.TextBox txt_atencion;
     }
 }
 
