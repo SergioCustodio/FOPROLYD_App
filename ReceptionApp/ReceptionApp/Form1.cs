@@ -532,6 +532,8 @@ namespace ReceptionApp
         {
             exportarAtencion();
         }
+
+       
     }
  }
 

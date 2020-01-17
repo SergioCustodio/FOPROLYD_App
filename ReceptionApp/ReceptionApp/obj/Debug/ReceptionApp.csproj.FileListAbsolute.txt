@@ -18,4 +18,3 @@ C:\Users\kasuya\Documents\GitHub\FOPROLYD_App\ReceptionApp\ReceptionApp\obj\Debu
 C:\Users\kasuya\Documents\GitHub\FOPROLYD_App\ReceptionApp\ReceptionApp\obj\Debug\ReceptionApp.csproj.CoreCompileInputs.cache
 C:\Users\kasuya\Documents\GitHub\FOPROLYD_App\ReceptionApp\ReceptionApp\obj\Debug\ReceptionApp.exe
 C:\Users\kasuya\Documents\GitHub\FOPROLYD_App\ReceptionApp\ReceptionApp\obj\Debug\ReceptionApp.pdb
-C:\Users\kasuya\Documents\GitHub\FOPROLYD_App\ReceptionApp\ReceptionApp\obj\Debug\ReceptionApp.Buscar_llamadas.resources

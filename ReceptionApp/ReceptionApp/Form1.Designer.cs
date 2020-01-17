@@ -29,8 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(recepcion_form));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.llamadas_tab = new System.Windows.Forms.TabPage();
             this.Exportar_btn = new System.Windows.Forms.Button();
@@ -67,6 +68,10 @@
             this.btn_saveAudiencia = new System.Windows.Forms.Button();
             this.DT_audiencias = new System.Windows.Forms.DateTimePicker();
             this.atencion_tab = new System.Windows.Forms.TabPage();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txt_atencion = new System.Windows.Forms.TextBox();
+            this.atencion_datagrid = new System.Windows.Forms.DataGridView();
+            this.exportar_antencion = new System.Windows.Forms.Button();
             this.guardar_atencion = new System.Windows.Forms.Button();
             this.c_beneficiario_atencion = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -77,10 +82,6 @@
             this.report_btn = new System.Windows.Forms.Button();
             this.salir_btn = new System.Windows.Forms.Button();
             this.llamadasTableAdapter = new ReceptionApp.FOPROLYD_recepDataSetTableAdapters.llamadasTableAdapter();
-            this.exportar_antencion = new System.Windows.Forms.Button();
-            this.atencion_datagrid = new System.Windows.Forms.DataGridView();
-            this.txt_atencion = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.llamadas_tab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.llamadas_datagrid)).BeginInit();
@@ -89,10 +90,10 @@
             this.audiencias_tab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Datagrid_audiencia)).BeginInit();
             this.atencion_tab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.atencion_datagrid)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.llamadasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fOPROLYD_recepDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.atencion_datagrid)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -244,23 +245,23 @@
             this.llamadas_datagrid.AllowUserToDeleteRows = false;
             this.llamadas_datagrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.llamadas_datagrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.llamadas_datagrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.llamadas_datagrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.llamadas_datagrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.llamadas_datagrid.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.llamadas_datagrid.DefaultCellStyle = dataGridViewCellStyle2;
             this.llamadas_datagrid.Location = new System.Drawing.Point(24, 208);
             this.llamadas_datagrid.Name = "llamadas_datagrid";
             this.llamadas_datagrid.ReadOnly = true;
@@ -578,6 +579,48 @@
             this.atencion_tab.Text = "Atención al publico";
             this.atencion_tab.Click += new System.EventHandler(this.atencion_tab_Click);
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Helvetica", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label11.Location = new System.Drawing.Point(17, 115);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(80, 12);
+            this.label11.TabIndex = 7;
+            this.label11.Text = "Observaciones";
+            // 
+            // txt_atencion
+            // 
+            this.txt_atencion.Location = new System.Drawing.Point(17, 134);
+            this.txt_atencion.Multiline = true;
+            this.txt_atencion.Name = "txt_atencion";
+            this.txt_atencion.Size = new System.Drawing.Size(887, 49);
+            this.txt_atencion.TabIndex = 6;
+            // 
+            // atencion_datagrid
+            // 
+            this.atencion_datagrid.AllowUserToAddRows = false;
+            this.atencion_datagrid.AllowUserToDeleteRows = false;
+            this.atencion_datagrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.atencion_datagrid.Location = new System.Drawing.Point(17, 189);
+            this.atencion_datagrid.Name = "atencion_datagrid";
+            this.atencion_datagrid.ReadOnly = true;
+            this.atencion_datagrid.Size = new System.Drawing.Size(887, 215);
+            this.atencion_datagrid.TabIndex = 5;
+            // 
+            // exportar_antencion
+            // 
+            this.exportar_antencion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.exportar_antencion.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.exportar_antencion.Location = new System.Drawing.Point(640, 27);
+            this.exportar_antencion.Name = "exportar_antencion";
+            this.exportar_antencion.Size = new System.Drawing.Size(132, 74);
+            this.exportar_antencion.TabIndex = 4;
+            this.exportar_antencion.Text = "Exportar a Excel";
+            this.exportar_antencion.UseVisualStyleBackColor = true;
+            this.exportar_antencion.Click += new System.EventHandler(this.exportar_antencion_Click);
+            // 
             // guardar_atencion
             // 
             this.guardar_atencion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -684,48 +727,6 @@
             // 
             this.llamadasTableAdapter.ClearBeforeFill = true;
             // 
-            // exportar_antencion
-            // 
-            this.exportar_antencion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.exportar_antencion.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.exportar_antencion.Location = new System.Drawing.Point(640, 27);
-            this.exportar_antencion.Name = "exportar_antencion";
-            this.exportar_antencion.Size = new System.Drawing.Size(132, 74);
-            this.exportar_antencion.TabIndex = 4;
-            this.exportar_antencion.Text = "Exportar a Excel";
-            this.exportar_antencion.UseVisualStyleBackColor = true;
-            this.exportar_antencion.Click += new System.EventHandler(this.exportar_antencion_Click);
-            // 
-            // atencion_datagrid
-            // 
-            this.atencion_datagrid.AllowUserToAddRows = false;
-            this.atencion_datagrid.AllowUserToDeleteRows = false;
-            this.atencion_datagrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.atencion_datagrid.Location = new System.Drawing.Point(17, 189);
-            this.atencion_datagrid.Name = "atencion_datagrid";
-            this.atencion_datagrid.ReadOnly = true;
-            this.atencion_datagrid.Size = new System.Drawing.Size(887, 215);
-            this.atencion_datagrid.TabIndex = 5;
-            // 
-            // txt_atencion
-            // 
-            this.txt_atencion.Location = new System.Drawing.Point(17, 134);
-            this.txt_atencion.Multiline = true;
-            this.txt_atencion.Name = "txt_atencion";
-            this.txt_atencion.Size = new System.Drawing.Size(887, 49);
-            this.txt_atencion.TabIndex = 6;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Helvetica", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label11.Location = new System.Drawing.Point(17, 115);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(80, 12);
-            this.label11.TabIndex = 7;
-            this.label11.Text = "Observaciones";
-            // 
             // recepcion_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -738,6 +739,7 @@
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.HelpButton = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "recepcion_form";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "Recepción FOPROLYD";
@@ -755,11 +757,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.Datagrid_audiencia)).EndInit();
             this.atencion_tab.ResumeLayout(false);
             this.atencion_tab.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.atencion_datagrid)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.llamadasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fOPROLYD_recepDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.atencion_datagrid)).EndInit();
             this.ResumeLayout(false);
 
         }
